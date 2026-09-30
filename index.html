@@ -1,10 +1,319 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jenkins Nginx App</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MJSpirits | Dance Crew</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0f;
+            color: white;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at top, #3b0a5c, transparent 45%),
+                linear-gradient(135deg, #080808, #16051f);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .crew {
+            font-size: 18px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #d8a7ff;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(60px, 12vw, 140px);
+            line-height: 0.9;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            font-size: 22px;
+            color: #cccccc;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            background: #ffffff;
+            color: #111111;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #d8a7ff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 50px;
+        }
+
+        /* TEAM */
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .member {
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #333;
+            border-radius: 20px;
+            background: #141419;
+            transition: 0.3s;
+        }
+
+        .member:hover {
+            transform: translateY(-8px);
+            border-color: #b76cff;
+        }
+
+        .member-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .member h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .member p {
+            color: #aaa;
+        }
+
+        /* ABOUT */
+
+        .about {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+            color: #bbbbbb;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #292929;
+            color: #888;
+        }
+
+        .brand {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width: 600px) {
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .section-title {
+                font-size: 35px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello from Jenkins 🚀</h1>
-    <h2>Nginx Deployment Successful!</h2>
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="crew">
+                Dance Crew
+            </div>
+
+            <h1>MJSpirits</h1>
+
+            <p class="tagline">
+                Feel the Rhythm. Own the Stage. 🔥
+            </p>
+
+            <a href="#team" class="btn">
+                Meet The Crew
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <h2 class="section-title">
+            About MJSpirits
+        </h2>
+
+        <p class="about">
+            MJSpirits is a passionate dance crew driven by
+            rhythm, energy and performance. From powerful
+            choreography to electrifying stage performances,
+            we bring every beat to life.
+        </p>
+
+    </section>
+
+
+    <!-- TEAM -->
+
+    <section id="team">
+
+        <h2 class="section-title">
+            Meet The Crew
+        </h2>
+
+        <div class="team">
+
+            <div class="member">
+
+                <div class="member-icon">
+                    👑
+                </div>
+
+                <h3>
+                    Sai Kumar
+                </h3>
+
+                <p>
+                    Main Dancer
+                </p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-icon">
+                    💃
+                </div>
+
+                <h3>
+                    Hemu
+                </h3>
+
+                <p>
+                    Side Dancer
+                </p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-icon">
+                    🕺
+                </div>
+
+                <h3>
+                    Shiva
+                </h3>
+
+                <p>
+                    Side Dancer
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERFORMANCE -->
+
+    <section>
+
+        <h2 class="section-title">
+            Our Spirit
+        </h2>
+
+        <p class="about">
+            Every move tells a story.
+            Every beat creates energy.
+            Every performance represents
+            the spirit of MJSpirits.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="brand">
+            MJSpirits
+        </div>
+
+        <p>
+            Sai Kumar • Hemu • Shiva
+        </p>
+
+        <p style="margin-top:15px;">
+            © 2026 MJSpirits. All Rights Reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>
