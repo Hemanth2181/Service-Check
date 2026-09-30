@@ -9,13 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                echo 'Checking out code from GitHub...'
-                checkout scm
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
@@ -32,16 +25,18 @@ pipeline {
                 echo 'Testing Docker image...'
 
                 sh '''
+                    docker rm -f nginx-test || true
+
                     docker run -d \
                       --name nginx-test \
+                      -p 8081:80 \
                       ${IMAGE_NAME}:${BUILD_NUMBER}
 
                     sleep 5
 
-                    curl -f http://localhost:80
+                    curl -f http://localhost:8081
 
-                    docker stop nginx-test
-                    docker rm nginx-test
+                    docker rm -f nginx-test
                 '''
             }
         }
@@ -51,8 +46,7 @@ pipeline {
                 echo 'Deploying Nginx application...'
 
                 sh '''
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
+                    docker rm -f ${CONTAINER_NAME} || true
 
                     docker run -d \
                       --name ${CONTAINER_NAME} \
@@ -76,11 +70,11 @@ pipeline {
 
     post {
         success {
-            echo '✅ Nginx deployment successful!'
+            echo 'Nginx deployment successful!'
         }
 
         failure {
-            echo '❌ Nginx deployment failed!'
+            echo 'Nginx deployment failed!'
         }
 
         always {
